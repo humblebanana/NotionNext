@@ -1,11 +1,11 @@
 import { BeiAnGongAn } from '@/components/BeiAnGongAn'
 import BeiAnSite from '@/components/BeiAnSite'
-import { siteConfig } from '@/lib/config'
 
 const Footer = ({ title }) => {
   const d = new Date()
   const currentYear = d.getFullYear()
-  const since = siteConfig('SINCE')
+  // 注意：'since' 现在是一个硬编码的年份，您可以根据需要修改它
+  const since = '2023'
   const copyrightDate =
     parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
@@ -15,25 +15,20 @@ const Footer = ({ title }) => {
       <i className='fas fa-copyright' /> {`${copyrightDate}`}
       <span>
         <i className='mx-1 animate-pulse fas fa-heart' />
+        {/* 注意：链接和作者名现在是硬编码的，您可以替换成您的信息 */}
         <a
-          href={siteConfig('LINK')}
+          href="YOUR_LINK" // 替换为您的链接
           className='underline font-bold  dark:text-gray-300 '>
-          {siteConfig('AUTHOR')}
+          YOUR_AUTHOR_NAME // 替换为您的名字
         </a>
         .  
 
         <BeiAnSite />
         <BeiAnGongAn />
-        <span className='hidden busuanzi_container_site_pv'>
-          <i className='fas fa-eye' />
-          <span className='px-1 busuanzi_value_site_pv'> </span>
-        </span>
-        <span className='pl-2 hidden busuanzi_container_site_uv'>
-          <i className='fas fa-users' />
-          <span className='px-1 busuanzi_value_site_uv'> </span>
-        </span>
         <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>
-          {title} {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}
+          {title}
+          {/* 注意：个人简介(BIO)现在是硬编码的，您可以替换成您的信息 */}
+          {' | YOUR_BIO'}
         </h1>
       </span>
         
